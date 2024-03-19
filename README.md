@@ -2,6 +2,11 @@
 
 Welcome to To-Do-Master, your go-to To-Do List application designed to streamline your task management process effortlessly. Developed using HTML, CSS, and JavaScript, ToDoMaster offers a sleek and intuitive user interface coupled with robust functionality to help you organize your tasks efficiently.
 
+## Demo
+
+[Link to live demo](https://sagar-1m.github.io/To-Do-Master/)
+![Home](https://github.com/sagar-1m/To-Do-Master/blob/main/Capture.PNG)
+
 ## Features
 
 - **User-Friendly Interface**: Enjoy a clean and intuitive interface for efficient task management.
