@@ -75,7 +75,6 @@ function editTask(element) {
   document.getElementById("prioritySelect").value = priority;
   document.getElementById("dueDateInput").value = dueDate;
 
-  // Delete the task after editing
   deleteTask(element);
 }
 
