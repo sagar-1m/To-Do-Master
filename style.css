@@ -1,114 +1,206 @@
-/* Include the padding and border in an element's total width and height */
-* {
-  box-sizing: border-box;
-}
-
-/* Remove margins and padding from the list */
-ul {
+/* General styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a478b;
   margin: 0;
   padding: 0;
 }
 
-/* Style the list items */
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Heading styles */
+.heading {
+  color: #333;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Input container styles */
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.input-container input[type="text"],
+.input-container select,
+.input-container input[type="date"],
+.input-container .addBtn,
+.clearBtn {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  flex: 1;
+}
+
+.input-container .addBtn,
+.clearBtn {
+  background-color: #007bff; /* Blue color */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-container .addBtn:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
+}
+
+/* Task list styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
 ul li {
   cursor: pointer;
-  position: relative;
-  padding: 12px 8px 12px 40px;
-  background: #eee;
-  font-size: 18px;
-  transition: 0.2s;
-
-  /* make the list items unselectable */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  padding: 12px 8px;
+  background: hsl(220, 17%, 93%);
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s;
+  gap: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-/* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
-  background: #f9f9f9;
+ul li:last-child {
+  border-bottom: none;
 }
 
-/* Darker background-color on hover */
 ul li:hover {
-  background: #ddd;
+  background: #e3e3e3;
 }
 
-/* When clicked on, add a background color and strike out text */
 ul li.checked {
-  background: #888;
-  color: #fff;
+  background: #f2f2f2;
+  color: #888;
   text-decoration: line-through;
 }
 
-/* Add a "checked" mark when clicked on */
-ul li.checked::before {
-  content: "";
-  position: absolute;
-  border-color: #fff;
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  top: 10px;
-  left: 16px;
-  transform: rotate(45deg);
-  height: 15px;
-  width: 7px;
+/* ul li.checked .task-name {
+  text-decoration: line-through;
+} */
+
+/* Task name styles */
+.task-name {
+  flex: 1;
+  margin-right: 10px;
+  color: #333; /* Dark text color */
 }
 
-/* Style the close button */
-.close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 12px 16px 12px 16px;
+/* Priority styles */
+.priority {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
-.close:hover {
-  background-color: #f44336;
-  color: white;
+.low {
+  background-color: #e6d435;
+  color: #29031c;
 }
 
-/* Style the header */
-.header {
-  background-color: #053349;
-  padding: 30px 40px;
-  color: white;
-  text-align: center;
+.medium {
+  background-color: #ff9800;
+  color: #29031c;
+  /* border: solid 1px black; */
+}
+.high {
+  background-color: #18a347;
+  color: #29031c;
+}
+*/
+
+/* Due date styles */
+.due-date {
+  font-size: 12px;
+  color: black;
 }
 
-/* Clear floats after the header */
-.header:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Style the input */
-input {
-  margin: 0;
+/* Edit and Delete button styles */
+.editBtn {
+  background-color: #3d7bbd;
+  color: black;
   border: none;
-  border-radius: 0;
-  width: 75%;
-  padding: 10px;
-  float: left;
-  font-size: 16px;
-}
-
-/* Style the "Add" button */
-.addBtn {
-  padding: 10px;
-  width: 25%;
-  background: #c8cfee;
-  color: #570b0b;
-  float: left;
-  text-align: center;
-  font-size: 16px;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin-left: 5px;
   cursor: pointer;
-  transition: 0.3s;
-  border-radius: 0;
+  transition: background-color 0.3s ease;
 }
 
-.addBtn:hover {
-  background-color: #bbb;
+.editBtn:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.deleteBtn {
+  background-color: rgb(235, 89, 89);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.deleteBtn:hover {
+  background-color: #d61912;
+  color: white;
+}
+
+.taskCount {
+  padding: auto;
+}
+.clearContainer {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30%;
+}
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+  .input-container {
+    flex-direction: column;
+  }
+
+  .input-container input[type="text"],
+  .input-container select,
+  .input-container input[type="date"],
+  .input-container .addBtn {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .date-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .clearContainer {
+    flex-direction: column;
+  }
 }
